@@ -1,12 +1,13 @@
-
+#PROYECTOFINALCGV
+#By ING. Eduardo JOC amd ING. Marvin MMM
 import tkinter
 
 def saludar2():
     def saludar():
-        primer_ventana.deiconify()
+        MenuMainPage.deiconify()
         segunda_ventana.destroy()
     # Segunda ventana con valores negativos
-    primer_ventana.withdraw()
+    MenuMainPage.withdraw()
     segunda_ventana = tkinter.Tk()
     segunda_ventana.geometry("300x300-0-0")
     segunda_ventana.title("Posicion x=-0 y=-0")
@@ -17,19 +18,21 @@ def saludar2():
     segunda_ventana.mainloop()
 
 
-# Primera ventana con valores positivos
-primer_ventana = tkinter.Tk()
-primer_ventana.geometry("300x300+0+0")
-# A modo estetico le di un titulo
-primer_ventana.title("Posicion x=+0 y=+0")
-# Este tambien es estetico y no influye en el uso del metodo
-etiqueta = tkinter.Label(primer_ventana, text="Posicion x=+0 y=+0")
-bt2= tkinter.Button(primer_ventana, text="Ir a Test a:", command= saludar2)
-
-etiqueta.pack()
-bt2.pack()
-
-
-
-
-primer_ventana.mainloop()
+#           MenuMainPage
+#   Definicion de Ventana MenuMainPage
+MenuMainPage = tkinter.Tk()
+MenuMainPage.geometry("300x200+0+0")
+MenuMainPage.title("Parking Zott")
+lblTitulo = tkinter.Label(MenuMainPage, text="Menu Principal")
+btnCamaraVivo = tkinter.Button(MenuMainPage, text="Camara en VIVO!", command= saludar2)
+btnCancelacion = tkinter.Button(MenuMainPage, text="Cancelaciones", command= saludar2)
+btnUsuarios = tkinter.Button(MenuMainPage, text="Usuarios", command= saludar2)
+btnVehiculos = tkinter.Button(MenuMainPage, text="Vehiculos", command= saludar2)
+btnReportes = tkinter.Button(MenuMainPage, text="Reportes", command= saludar2)
+lblTitulo.pack()
+btnCamaraVivo.pack()
+btnCancelacion.pack()
+btnUsuarios.pack()
+btnVehiculos.pack()
+btnReportes.pack()
+MenuMainPage.mainloop()
